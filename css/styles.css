@@ -106,20 +106,6 @@ img {
   align-items: center;
 }
 
-.logo {
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #2e2f42;
-  margin-right: 76px;
-}
-.logo-accent {
-  color: #4d5ae5;
-}
-
 .nav-list {
   display: flex;
   gap: 40px;
@@ -187,7 +173,12 @@ img {
 .address-link:focus {
   color: #404bbf;
 }
-
+.backdrop {
+  z-index: 999;
+}
+.modal {
+  z-index: 1000;
+}
 /* ========= HERO ========= */
 .hero {
   max-width: 1440px;
@@ -245,7 +236,12 @@ img {
 .btn-primary:focus {
   background-color: #404bbf;
 }
-
+.backdrop {
+  z-index: 999;
+}
+.modal {
+  z-index: 1000;
+}
 /* ========= FEATURES ========= */
 .features-list {
   display: flex;
@@ -265,10 +261,11 @@ img {
   background-color: #f4f4fd;
   border: 1px solid #8e8f99;
   border-radius: 4px;
+  color: #2e2f42;
 }
 
 .features-icon {
-  fill: #2e2f42;
+  fill: currentColor;
 }
 
 .features-subtitle {
@@ -300,11 +297,9 @@ img {
 
 .team-item {
   width: calc((100% - 72px) / 4);
-
   background-color: #ffffff;
   border-radius: 0 0 4px 4px;
   overflow: hidden;
-
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
@@ -316,7 +311,6 @@ img {
 .team-name {
   text-align: center;
   margin-bottom: 8px;
-
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -327,7 +321,6 @@ img {
 
 .team-role {
   text-align: center;
-
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -409,17 +402,15 @@ img {
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   padding: 40px 32px;
-
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   background-color: #4d5ae5;
   color: #f4f4fd;
-
   transform: translateY(100%);
-
   transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -509,13 +500,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: 100%;
-
   background-color: #4d5ae5;
   border-radius: 50%;
-
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -531,6 +519,9 @@ img {
 }
 .footer-subscribe-title {
   font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: #ffffff;
   margin-bottom: 16px;
 }
@@ -549,10 +540,10 @@ img {
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: transparent;
-  border: 1px solid #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   outline: transparent;
-
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -579,8 +570,9 @@ img {
   justify-content: center;
   gap: 16px;
   cursor: pointer;
-
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .subscribe-btn:hover,
@@ -589,7 +581,8 @@ img {
 }
 
 .subscribe-icon {
-  fill: #ffffff;
+  fill: currentColor;
+  background: transparent;
 }
 .modal-title {
   font-weight: 500;
@@ -598,47 +591,8 @@ img {
   margin-bottom: 16px;
 }
 
-.form-field {
-  margin-bottom: 8px;
-}
-
 .form-field:last-of-type {
   margin-bottom: 16px;
-}
-
-.form-label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-}
-
-.input-wrap {
-  position: relative;
-}
-
-.form-input {
-  width: 100%;
-  height: 40px;
-  padding-left: 38px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  outline: transparent;
-  background-color: transparent;
-
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  fill: #2e2f42;
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
@@ -649,68 +603,12 @@ img {
   fill: #4d5ae5;
 }
 
-.form-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 8px 16px;
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: rgba(46, 47, 66, 0.4);
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  outline: transparent;
-  background-color: transparent;
-  resize: none; /* C11 */
-
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .form-textarea:focus {
   border-color: #4d5ae5;
 }
 
 .form-textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
-}
-
-/* checkbox (D4–D5) */
-.form-checkbox {
-  margin-bottom: 24px;
-}
-
-.checkbox-label {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-}
-
-.checkbox-box {
-  display: inline-flex;
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 2px;
-  align-items: center;
-  justify-content: center;
-  fill: transparent;
-
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.checkbox-input:checked + .checkbox-label .checkbox-box {
-  background-color: #404bbf;
-  border-color: #404bbf;
-  fill: #f4f4fd;
-}
-
-.privacy-link {
-  color: #4d5ae5;
-  text-decoration: underline;
 }
 
 /* submit btn */
@@ -759,20 +657,14 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 408px;
   min-height: 584px;
-
   transform: translate(-50%, -50%) scale(0.98);
-
   background-color: #fcfcfc;
   border-radius: 4px;
-
   padding: 72px 24px 24px;
-
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -784,21 +676,16 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
-
   width: 24px;
   height: 24px;
   padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-
   background-color: #e7e9fc;
   cursor: pointer;
-
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }

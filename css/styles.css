@@ -700,9 +700,9 @@ img {
 }
 
 .modal-close-icon {
-  fill: currentColor;
-  width: 8px;
-  height: 8px;
+  stroke: #2e2f42;
+  fill: none;
+  opacity: 1;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -710,14 +710,14 @@ img {
   position: absolute;
   top: 24px;
   right: 24px;
+  color: #2e2f42;
+  width: 24px;
+  height: 24px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 24px;
-  height: 24px;
-  color: #2e2f42;
   padding: 0;
 
   background-color: #e7e9fc;
@@ -727,16 +727,14 @@ img {
   cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: #404bbf;
 
-  border: transparent;
-  color: #ffffff;
+  border: none;
 }
 
 .modal-close-btn:hover .modal-close-icon,
@@ -848,8 +846,6 @@ img {
   margin-bottom: 24px;
 }
 .modal-close-icon {
-  width: 10px;
-  height: 8px;
   fill: #f4f4fd;
 }
 .modal-checkbox-label {
@@ -882,8 +878,9 @@ img {
 
 .modal-checkbox-input:checked + .modal-checkbox-label .modal-checkbox-box {
   background-color: #404bbf;
-  border-color: #404bbf;
+  border: none;
   fill: #f4f4fd;
+  opacity: 1;
 }
 
 .modal-privacy-link {

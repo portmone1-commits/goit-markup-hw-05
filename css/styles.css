@@ -469,7 +469,13 @@ img {
 .footer-container {
   display: flex;
   align-items: baseline;
-  gap: 120px;
+}
+.footer-info {
+  margin-right: 120px;
+  max-width: 264px;
+}
+.footer-social {
+  margin-right: 80px;
 }
 
 .footer-text {
@@ -481,7 +487,9 @@ img {
 
   color: #f4f4fd;
 }
-
+.footer-subscribe {
+  margin-left: auto;
+}
 /* Footer social */
 .logo-footer {
   display: inline-block;
@@ -529,6 +537,8 @@ img {
 }
 
 .footer-social-icon {
+  width: 24px;
+  height: 24px;
   fill: #f4f4fd;
 }
 .footer-subscribe-title {
@@ -544,7 +554,11 @@ img {
   display: flex;
   gap: 24px;
 }
-
+.subscribe-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
 .subscribe-input {
   width: 264px;
   height: 40px;
@@ -566,7 +580,7 @@ img {
 }
 
 .subscribe-input:focus {
-  border-color: #4d5ae5;
+  border-color: #31d0aa;
 }
 
 .subscribe-btn {
@@ -588,12 +602,11 @@ img {
   font-size: 16px;
   line-height: 1.5;
 }
-
 .subscribe-btn:hover,
-.subscribe-btn:focus {
-  background-color: #404bbf;
+.subscribe-btn:focus,
+.subscribe-btn:focus-visible {
+  background-color: #31d0aa;
 }
-
 .subscribe-icon {
   fill: currentColor;
   background: transparent;
@@ -688,9 +701,11 @@ img {
 
 .modal-close-icon {
   fill: currentColor;
-
+  width: 8px;
+  height: 8px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-close-btn {
   position: absolute;
   top: 24px;
@@ -712,7 +727,7 @@ img {
   cursor: pointer;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -720,7 +735,7 @@ img {
 .modal-close-btn:focus {
   background-color: #404bbf;
 
-  border: none;
+  border: transparent;
   color: #ffffff;
 }
 
@@ -807,7 +822,7 @@ img {
   line-height: 1.17;
   letter-spacing: 0.04em;
 
-  color: rgba(46, 47, 66, 0.4);
+  color: #2e2f42;
 
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
@@ -832,7 +847,11 @@ img {
 .modal-checkbox {
   margin-bottom: 24px;
 }
-
+.modal-close-icon {
+  width: 10px;
+  height: 8px;
+  fill: #f4f4fd;
+}
 .modal-checkbox-label {
   font-size: 12px;
   line-height: 1.17;

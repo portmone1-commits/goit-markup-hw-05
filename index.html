@@ -560,15 +560,15 @@
                         </div>
                         <div class="footer-subscribe">
                                 <p class="footer-subscribe-title">Subscribe</p>
-
                                 <form class="subscribe-form">
                                         <label class="subscribe-label">
+
                                                 <input class="subscribe-input" type="email" name="user_email"
                                                         placeholder="E-mail" required />
                                         </label>
 
-                                        <button class="subscribe-btn" type="submit">
-                                                Subscribe
+                                        <button class="subscribe-btn" type="submit">Subscribe
+
                                                 <svg class="subscribe-icon" width="24" height="24" aria-hidden="true">
                                                         <use href="./images/icons.svg#icon-send"></use>
                                                 </svg>
@@ -578,7 +578,7 @@
 
                 </div>
         </footer>
-        <div class="backdrop" data-modal>
+        <div class="backdrop " data-modal>
                 <div class="modal" role="dialog" aria-modal="true" aria-label="Leave your contacts">
                         <button class="modal-close-btn" type="button" data-modal-close aria-label="Close modal">
                                 <svg class="modal-close-icon" width="8" height="8" aria-hidden="true">
@@ -649,28 +649,30 @@
 
         <script>
                 (() => {
-                        const refs = {
-                                openBtn: document.querySelector("[data-modal-open]"),
-                                closeBtn: document.querySelector("[data-modal-close]"),
-                                modal: document.querySelector("[data-modal]"),
-                        };
+                        const openBtn = document.querySelector("[data-modal-open]");
+                        const closeBtn = document.querySelector("[data-modal-close]");
+                        const modal = document.querySelector("[data-modal]");
 
-                        if (!refs.modal) return;
+                        if (!openBtn || !closeBtn || !modal) {
+                                console.warn("Modal refs not found:", { openBtn, closeBtn, modal });
+                                return;
+                        }
 
-                        const toggle = () => refs.modal.classList.toggle("is-open");
+                        const toggle = () => modal.classList.toggle("is-open");
 
-                        refs.openBtn?.addEventListener("click", toggle);
-                        refs.closeBtn?.addEventListener("click", toggle);
+                        openBtn.addEventListener("click", toggle);
+                        closeBtn.addEventListener("click", toggle);
 
-                        refs.modal.addEventListener("click", (e) => {
-                                if (e.target === refs.modal) toggle();
+                        modal.addEventListener("click", (e) => {
+                                if (e.target === modal) toggle();
                         });
 
                         document.addEventListener("keydown", (e) => {
-                                if (e.key === "Escape" && refs.modal.classList.contains("is-open")) toggle();
+                                if (e.key === "Escape" && modal.classList.contains("is-open")) toggle();
                         });
                 })();
         </script>
+
 
 </body>
 

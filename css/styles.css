@@ -800,7 +800,7 @@ img {
 }
 .modal-checkbox-input:checked + .modal-checkbox-label .modal-checkbox-box {
   background-color: #404bbf;
-  border: none;
+  border-color: #404bbf;
 }
 
 .modal-privacy-link {
